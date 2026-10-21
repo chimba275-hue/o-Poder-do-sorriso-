@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Lora", "Playfair Display", Georgia, serif;
+    --font-display: "Playfair Display", "Lora", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-editorial-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-editorial-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom drop-cap styling */
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.82;
+  padding-top: 0.2rem;
+  padding-right: 0.6rem;
+  padding-bottom: 0.1rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.dark .drop-cap::first-letter,
+[data-theme="dark"] .drop-cap::first-letter {
+  color: #fbbf24;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Print Styles for PDF Export */
+@media print {
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+  .chapter-container {
+    page-break-inside: avoid;
+  }
+  * {
+    box-shadow: none !important;
+  }
+}
+

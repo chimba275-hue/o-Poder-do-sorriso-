@@ -1,0 +1,6 @@
+{
+  "name": "O Poder do Sorriso - E-book Interativo",
+  "description": "E-book completo e interativo sobre como levar mais alegria, leveza e positividade para a sua vida através do poder do sorriso.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
